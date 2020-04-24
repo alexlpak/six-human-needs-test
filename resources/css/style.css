@@ -1,0 +1,247 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+* {
+  user-select: none;
+}
+
+a { text-decoration: none; color: inherit; }
+a:visted { text-decoration: none; }
+a:hover { cursor: pointer; }
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Flex Styles */
+.flex { display: flex; }
+.fd-col { flex-direction: column; }
+.fd-rr { flex-direction: row-reverse; }
+.ai-c { align-items: center; }
+.jc-c { justify-content: center; }
+.jc-sb { justify-content: space-between; }
+
+/* Question Styling */
+.questions-container {
+  padding: 1rem;
+  max-width: 30rem;
+  margin: 0 auto 4rem auto;
+}
+
+.question {
+  padding: 1rem;
+  max-width: 30rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+  border: 1px solid black;
+  transition: 250ms ease all;
+}
+
+.question:last-child {
+  margin: 0 auto;
+}
+
+.question-title {
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.question-options {
+  margin-top: .5rem;
+}
+
+.question-options .option {
+  margin-bottom: .5rem;
+}
+
+.question-options input, .question-options label {
+  cursor: pointer;
+}
+
+.question-options .option:last-child {
+  margin-bottom: 0rem;
+}
+
+/* .question.unanswered {
+  border: 1px solid red;
+  background-color: #ffebeb;
+} */
+
+.question.answered {
+  border: 1px solid green;
+  background-color: #e2f9e2;
+  transition: 500ms ease all;
+}
+
+.clear-answers {
+  padding: 1rem 0;
+}
+
+.shadow {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .25);
+}
+
+button.big-button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1px solid black;
+}
+
+button.big-button:active {
+  background-color: #f1f1f1;
+}
+
+button.small-button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .75rem;
+  font-weight: bold;
+  padding: .75rem;
+  border-radius: .5rem;
+  border: 1px solid black;
+}
+
+button.small-button:active {
+  background-color: #f1f1f1;
+}
+
+/* Popup Styling */
+.popup-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.popup {
+  background-color: white;
+  width: 30rem;
+  height: 20rem;
+  border-radius: .5rem;
+  border: 1px solid black;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup .button-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup-message {
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Progress Bar Styling */
+.progress-container {
+  height: 4rem;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  border: 1px solid black;
+  padding: .5rem;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  height: 1rem;
+  width: 80%;
+  background-color: lightgray;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar .complete {
+  height: 100%;
+  width: 0;
+  background-color: green;
+}
+
+.progress-container .percentage {
+  font-weight: bold;
+  color: lightgray;
+  width: 4rem;
+  text-align: center;
+}
+
+button.results {
+  background-color: green;
+  color: white;
+}
+
+button.results:active {
+  background-color: #4caf50;
+}
+
+/* Results Styling */
+.results-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #2196f3;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.results-container .results {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: .5rem;
+  max-width: 30rem;
+  width: 100%;
+}
+
+.results .title {
+  font-weight: bold;
+}
+
+.results .subtitle {
+  color: gray;
+  font-size: .8rem;
+  margin-top: .25rem;
+}
+
+.results .need .score {
+  width: 2rem;
+  font-weight: bold;
+}
+
+.results .need .name {
+}
+
+.results .need {
+  margin-bottom: .25rem;
+}
+
+.results .needs {
+  margin-top: 1rem;
+}
