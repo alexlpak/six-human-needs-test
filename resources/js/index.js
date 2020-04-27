@@ -91,7 +91,7 @@ const generateQuestions = () => {
   let questionNumbers = Object.keys(questions);
   questionNumbers.forEach(number => {
     let $question = $(`
-          <div class="question shadow" id="question${number}">
+          <div class="card question shadow" id="question${number}">
             <span class="question-title">${number}. ${questions[number].title}</span>
             <div class="question-options">
               <div class="option">
@@ -109,9 +109,11 @@ const generateQuestions = () => {
             </div>
           </div>
       `);
-    $('.questions-container').append($question);
+    $('.test-container').append($question);
   });
 };
+
+
 
 const clearAnswers = () => {
   $('.question input').toArray().forEach(input => {
@@ -121,6 +123,8 @@ const clearAnswers = () => {
   updateProgress();
   $('.question.answered').removeClass('answered');
   hideResultsButton();
+  $('.clear-answers button')[0].disabled = true;
+  closePopup();
 }
 
 const populateAnswers = () => {
@@ -161,7 +165,7 @@ const hideResultsButton = () => {
 }
 
 const getResults = () => {
-  $('.questions-container').fadeOut();
+  $('.test-container').fadeOut();
   $('.progress-container').fadeOut();
 
   let needs = generateResults();
@@ -258,28 +262,38 @@ $('.question input').click(function() {
   updateProgress();
   highlightAnswered();
   if (checkAnswers()) { showResultsButton(); };
+  if ($('.clear-answers button')[0].disabled) {
+    $('.clear-answers button')[0].disabled = false;
+  };
 })
 
 const closePopup = () => {
   $('body').removeClass("no-scroll");
-  $('.popup-container').remove();
+  $('.popup-container').fadeOut(250);
+  setTimeout(function() { $('.popup-container').remove(); }, 300);
 };
 
-const confirmPopup = (message, confirmFunction) => {
+const clearQuestionsPopup = () => {
   let $popup = $(`
-      <div class="popup-container">
-        <div class="popup">
-          <p class="popup-message">${message}</p>
+      <div class="popup-container shadow" style="display: none;">
+        <div class="popup flex fd-col jc-sb ai-c">
+          <div class="popup-message">
+            <span class="title">Clear Answers</span>
+            <p class="body">Are you sure you want to clear your answers and start over?</p>
+          </div>
           <div class="button-container">
-            <button class="small-button confirm" onclick="${confirmFunction}" type="button">Confirm</button>
-            <button class="small-button cancel" onclick="closePopup()" type="button">Cancel</button>
+          <button class="small-button cancel" onclick="closePopup()" type="button">Cancel</button>
+            <button class="small-button confirm" onclick="clearAnswers()" type="button">Confirm</button>
           </div>
         </div>
       </div>
     `);
     $('body').append($popup);
     $('body').addClass("no-scroll");
+    $('.popup-container').fadeIn(250);
 };
+
+
 
 const getProgress = () => {
   let totalAnswered = 0;
@@ -306,6 +320,10 @@ updateProgress();
 if (checkAnswers()) {
   showResultsButton();
 };
+
+if (!$('.question.answered').length) {
+  $('.clear-answers button')[0].disabled = true;
+}
 
 const removeSpecialCharacters = string => {
   return string.replace(/[^a-zA-Z ]/g, "");

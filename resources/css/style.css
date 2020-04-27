@@ -1,9 +1,14 @@
 html {
   font-size: 16px;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #004780;
+  height: 100%;
+  overflow: auto;
 }
 
 *:focus {
@@ -14,12 +19,20 @@ body {
   user-select: none;
 }
 
+strong {
+  font-weight: bold;
+}
+
 a { text-decoration: none; color: inherit; }
 a:visted { text-decoration: none; }
 a:hover { cursor: pointer; }
 
 button:hover {
   cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 /* Flex Styles */
@@ -30,14 +43,61 @@ button:hover {
 .jc-c { justify-content: center; }
 .jc-sb { justify-content: space-between; }
 
+/* Introduction Card Styling */
+.introduction {
+  font-size: .75rem;
+  line-height: 1.2rem;
+}
+
+.introduction .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.introduction .author {
+  font-size: .75rem;
+  color: gray;
+  margin-bottom: .5rem;
+}
+
+.introduction .description {
+  margin-bottom: .5rem;
+}
+
+.introduction .needs {
+  margin-bottom: .5rem;
+}
+
+/* Instructions Styling */
+.instructions {
+  font-size: .75rem;
+  line-height: 1.2rem;
+}
+
+.instructions .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.instructions .description {
+  margin-bottom: .5rem;
+}
+
+.instructions .options {
+  margin-bottom: .5rem;
+}
+
 /* Question Styling */
-.questions-container {
+.test-container {
   padding: 1rem;
   max-width: 30rem;
   margin: 0 auto 4rem auto;
 }
 
-.question {
+.card {
+  background-color: white;
   padding: 1rem;
   max-width: 30rem;
   margin-bottom: 1rem;
@@ -83,7 +143,7 @@ button:hover {
 }
 
 .clear-answers {
-  padding: 1rem 0;
+  min-width: 7rem;
 }
 
 .shadow {
@@ -129,8 +189,9 @@ button.small-button:active {
 
 .popup {
   background-color: white;
-  width: 30rem;
-  height: 20rem;
+  width: 20rem;
+  padding: 2rem 2rem;
+  box-sizing: border-box;
   border-radius: .5rem;
   border: 1px solid black;
   position: fixed;
@@ -139,20 +200,29 @@ button.small-button:active {
   transform: translate(-50%, -50%);
 }
 
-.popup .button-container {
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
+.popup .button-container .cancel {
+  margin-right: .5rem;
+}
+
+.popup .button-container .confirm {
+  background-color: green;
+  color: white;
 }
 
 .popup-message {
-  position: absolute;
-  top: 7rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  text-align: center;
+  line-height: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.popup-message .title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.popup-message .body {
+  font-size: .75rem;
 }
 
 .no-scroll {
@@ -169,14 +239,18 @@ button.small-button:active {
   border: 1px solid black;
   padding: .5rem;
   box-sizing: border-box;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .progress-bar {
   height: 1rem;
-  width: 80%;
+  width: 15rem;
   background-color: lightgray;
   border-radius: 1rem;
   overflow: hidden;
+  margin: 0 1rem;
 }
 
 .progress-bar .complete {
@@ -188,8 +262,12 @@ button.small-button:active {
 .progress-container .percentage {
   font-weight: bold;
   color: lightgray;
-  width: 4rem;
   text-align: center;
+}
+
+.progress-container .width-container {
+  max-width: 30rem;
+  width: 100%;
 }
 
 button.results {
@@ -206,7 +284,7 @@ button.results:active {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #2196f3;
+  background-color: #004780;
   padding: 1rem;
   box-sizing: border-box;
 }

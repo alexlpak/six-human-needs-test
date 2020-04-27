@@ -15,19 +15,50 @@
   <body>
 
     <!-- Questions Container -->
-    <div class="questions-container">
-      <div class="clear-answers flex fd-rr">
-        <button class="small-button shadow" type="button" name="clearAnswers" onclick="clearAnswers()">Clear Answers</button>
+    <div class="test-container">
+      <!-- Introduction Container -->
+      <div class="card shadow introduction flex fd-col">
+        <span class="title">6 Human Needs Test</span>
+        <span class="author">by Cloe Madanes</span>
+        <p class="description">
+          Welcome to the unofficial online version of the 6 Human Needs Test!<br>
+          This test will help you find your top Human Needs out of the following categories:
+        </p>
+        <ul class="needs">
+          <li>&bull; Certainy</li>
+          <li>&bull; Uncertainty</li>
+          <li>&bull; Significance</li>
+          <li>&bull; Love & Connection</li>
+          <li>&bull; Growth</li>
+          <li>&bull; Contribution</li>
+        </ul>
+      </div>
+      <!-- Instructions Container -->
+      <div class="card instructions shadow flex fd-col">
+        <span class="title">How To Take The Test</span>
+        <span class="description">Honestly consider each statement and check the option for:</span>
+        <ul class="options">
+          <li><strong>Yes</strong> for "yes, this is really me"</li>
+          <li><strong>Partly</strong> for "this is partly how I am"</li>
+          <li><strong>No</strong> for "this probably not how I am"</li>
+          <li>(If you don't know whether it applies it's usually best to check "no")</li>
+        </ul>
+        <span class="note"><strong>Please note:</strong> Your progress will be saved automatically as you go.</span>
       </div>
     </div>
 
     <!-- Progress Bar -->
-    <div class="progress-container flex jc-c ai-c">
-      <div class="progress-bar">
-        <div class="complete"></div>
+    <div class="progress-container flex ai-c jc-c">
+      <div class="width-container flex jc-c ai-c">
+        <div class="clear-answers flex fd-rr">
+          <button class="small-button shadow" type="button" name="clearAnswers" onclick="clearQuestionsPopup()">Clear Answers</button>
+        </div>
+        <div class="progress-bar">
+          <div class="complete"></div>
+        </div>
+        <span class="percentage"></span>
+        <button class="small-button results" type="submit" name="button" onclick="getResults()" style="display:none;">Get Results</button>
       </div>
-      <span class="percentage"></span>
-      <button class="small-button results" type="submit" name="button" onclick="getResults()" style="display:none;">Get Results</button>
     </div>
 
     <script type="text/javascript" src="resources/js/index.js"></script>
