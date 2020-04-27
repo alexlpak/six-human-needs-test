@@ -27,6 +27,10 @@ a { text-decoration: none; color: inherit; }
 a:visted { text-decoration: none; }
 a:hover { cursor: pointer; }
 
+button {
+  white-space: nowrap;
+}
+
 button:hover {
   cursor: pointer;
 }
