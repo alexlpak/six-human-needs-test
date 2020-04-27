@@ -50,8 +50,7 @@ button:disabled {
 
 /* Introduction Card Styling */
 .introduction {
-  font-size: .75rem;
-  line-height: 1.2rem;
+  line-height: 1.5rem;
 }
 
 .introduction .title {
@@ -61,7 +60,6 @@ button:disabled {
 }
 
 .introduction .author {
-  font-size: .75rem;
   color: gray;
   margin-bottom: .5rem;
 }
@@ -76,8 +74,7 @@ button:disabled {
 
 /* Instructions Styling */
 .instructions {
-  font-size: .75rem;
-  line-height: 1.2rem;
+  line-height: 1.5rem;
 }
 
 .instructions .title {
@@ -159,7 +156,6 @@ button.big-button {
   font-weight: bold;
   padding: 1rem;
   border-radius: .5rem;
-  border: 1px solid black;
 }
 
 button.big-button:active {
@@ -168,7 +164,6 @@ button.big-button:active {
 
 button.small-button {
   font-family: 'Open Sans', sans-serif;
-  font-size: .75rem;
   font-weight: bold;
   padding: .75rem;
   border-radius: .5rem;
@@ -213,7 +208,7 @@ button.small-button:active {
 }
 
 .popup-message {
-  line-height: 1.2rem;
+  line-height: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -225,7 +220,7 @@ button.small-button:active {
 }
 
 .popup-message .body {
-  font-size: .75rem;
+  line-height: 1.5rem;
 }
 
 .no-scroll {
@@ -295,7 +290,7 @@ button.results:active {
 .results-container .results {
   padding: 1rem;
   background-color: white;
-  border: 1px solid black;
+
   border-radius: .5rem;
   max-width: 30rem;
   width: 100%;
@@ -308,7 +303,6 @@ button.results:active {
 
 .results .subtitle {
   color: gray;
-  font-size: .75rem;
   margin-top: .25rem;
 }
 

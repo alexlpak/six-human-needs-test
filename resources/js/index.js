@@ -334,3 +334,5 @@ const populateNeedsLinks = () => {
       name.href = `${removeSpecialCharacters(name.innerText.toLowerCase())}.html`;
   });
 };
+
+console.log("%cCreated by Alex Pak at https://apak.design. Come say hi! 👋", "font-color: #004780; font-weight: bold;");
