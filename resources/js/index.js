@@ -199,7 +199,7 @@ const getResults = () => {
     <div class="results-container flex jc-c ai-c" style="display: none;">
         <div class="results flex fd-col">
             <span class="title">Your Results</span>
-            <span class="subtitle">Click on a need to learn more.</span>
+            <span class="subtitle">Click on a need to learn more about it.</span>
             <div class="needs">${needsString}</div>
         </div>
     </div>
