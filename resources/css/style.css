@@ -33,6 +33,7 @@ button:hover {
 
 button:disabled {
   cursor: not-allowed;
+  color: gray;
 }
 
 /* Flex Styles */
@@ -102,7 +103,6 @@ button:disabled {
   max-width: 30rem;
   margin-bottom: 1rem;
   border-radius: .5rem;
-  border: 1px solid black;
   transition: 250ms ease all;
 }
 
@@ -131,19 +131,17 @@ button:disabled {
   margin-bottom: 0rem;
 }
 
-/* .question.unanswered {
-  border: 1px solid red;
-  background-color: #ffebeb;
-} */
-
 .question.answered {
-  border: 1px solid green;
   background-color: #e2f9e2;
   transition: 500ms ease all;
 }
 
 .clear-answers {
   min-width: 7rem;
+}
+
+.clear-answers button {
+  background-color: lightgray;
 }
 
 .shadow {
@@ -169,7 +167,8 @@ button.small-button {
   font-weight: bold;
   padding: .75rem;
   border-radius: .5rem;
-  border: 1px solid black;
+  border: none;
+  background-color: lightgray;
 }
 
 button.small-button:active {
@@ -193,7 +192,6 @@ button.small-button:active {
   padding: 2rem 2rem;
   box-sizing: border-box;
   border-radius: .5rem;
-  border: 1px solid black;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -205,7 +203,7 @@ button.small-button:active {
 }
 
 .popup .button-container .confirm {
-  background-color: green;
+  background-color: #004780;
   color: white;
 }
 
@@ -236,7 +234,6 @@ button.small-button:active {
   background-color: white;
   position: fixed;
   bottom: 0;
-  border: 1px solid black;
   padding: .5rem;
   box-sizing: border-box;
   margin: 0 auto;
@@ -263,6 +260,7 @@ button.small-button:active {
   font-weight: bold;
   color: lightgray;
   text-align: center;
+  width: 5rem;
 }
 
 .progress-container .width-container {
@@ -273,6 +271,7 @@ button.small-button:active {
 button.results {
   background-color: green;
   color: white;
+  margin-left: .5rem;
 }
 
 button.results:active {

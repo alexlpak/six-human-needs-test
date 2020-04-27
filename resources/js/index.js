@@ -91,7 +91,7 @@ const generateQuestions = () => {
   let questionNumbers = Object.keys(questions);
   questionNumbers.forEach(number => {
     let $question = $(`
-          <div class="card question shadow" id="question${number}">
+          <div class="card question" id="question${number}">
             <span class="question-title">${number}. ${questions[number].title}</span>
             <div class="question-options">
               <div class="option">
@@ -197,7 +197,7 @@ const getResults = () => {
 
   let $results = $(`
     <div class="results-container flex jc-c ai-c" style="display: none;">
-        <div class="results flex fd-col shadow">
+        <div class="results flex fd-col">
             <span class="title">Your Results</span>
             <span class="subtitle">Click on a need to learn more.</span>
             <div class="needs">${needsString}</div>
@@ -275,7 +275,7 @@ const closePopup = () => {
 
 const clearQuestionsPopup = () => {
   let $popup = $(`
-      <div class="popup-container shadow" style="display: none;">
+      <div class="popup-container" style="display: none;">
         <div class="popup flex fd-col jc-sb ai-c">
           <div class="popup-message">
             <span class="title">Clear Answers</span>
